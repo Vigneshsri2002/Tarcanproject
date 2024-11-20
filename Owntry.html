@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- HTML code  -->
+
+<!-- Question container  -->
+
+<div class="question-container">
+
+<select name="questions" id="questions">
+
+    <option value=""> select </option>
+
+
+</select>
+
+</div>
+
+
+<!-- Answer container -->
+
+<div class="answer-container">
+
+<select name="answers" id="answers">
+
+<option value=""> select </option>
+
+</select>
+
+</div>
+
+
+<button onclick="display()"> click </button>
+
+</body>
+</html>
+
+
+<!-- Javascript code  -->
+
+
+<script>
+ 
+
+let questionarr=['React questions','Jsquestions',"css questions"]
+
+let reactans=['what is react','what is jsx','what is props']
+
+let jsans=['what is js','what is variables']
+
+let cssans=['what is css','how you add bg color']
+
+
+
+let questions=document.getElementById('questions')
+
+let answers=document.getElementById('answers')
+
+
+questionarr.map((val) => {
+
+  
+    let option=document.createElement('option')
+    option.textContent=val
+    option.value=val;
+
+    
+    questions.appendChild(option)
+})
+
+
+function display()
+{
+let input=document.getElementById("questions")
+
+ let value=input.options[input.selectedIndex].value
+
+let index=input.selectedIndex;
+
+console.log(index)
+
+
+
+ //const options=input.options[input.selectedIndex];
+
+ console.log(value);
+
+if(value==questionarr[index-1])
+
+{
+    switch (index)
+{
+case 1:
+    console.log('it is react questions')
+
+
+reactans.map((val) => {
+
+let reactoption=document.createElement('option')
+reactoption.textContent=val;
+reactoption.value=val
+
+answers.appendChild(reactoption)
+
+})
+
+
+    break;
+
+case 2:
+    console.log('it is js questions')
+
+jsans.map((val) => {
+
+let jsoption=document.createElement('option')
+jsoption.textContent=val;
+jsoption.value=val;
+
+answers.appendChild(jsoption)
+
+})
+
+
+break;
+
+    case 3:
+       console.log('it is css questions')
+
+
+       cssans.map((val) => {
+
+let cssoption=document.createElement('option')
+cssoption.textContent=val;
+cssoption.value=val
+
+answers.appendChild(cssoption)
+
+
+       })
+break;
+}
+
+}
+
+}
+
+</script>

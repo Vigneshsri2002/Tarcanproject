@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- HTML code  -->
+
+<!-- Question container  -->
+
+<div class="question-container">
+
+        <select name="questions" id="questions" onchange="changedropdownvalue(this.value)">
+    
+        <option value=""> select </option>
+    
+        <option value="reactquestion"> React question </option>
+        <option value="jsquestion"> Js question  </option>
+        <option value="cssquestion"> Css question </option>
+
+    </select>
+    
+    </div>
+    
+    
+    <!-- Answer container -->
+    
+    <div class="answer-container">
+    
+    <select name="answers" id="answers" >
+    
+    <option value=""> select </option>
+    
+    </select>
+    
+    </div>
+    
+
+
+</body>
+</html>
+
+<script>
+
+    var commonvalues={
+reactquestion:["what is react","what is jsx"],
+jsquestion:["what is javascript","what is variables"],
+cssquestion:["what is css","how we add background color"]
+
+    }
+
+function changedropdownvalue(value)
+{
+
+    if(value.length==0)
+    {
+        document.getElementById('answers').innerHTML="<option></option>"
+    }
+
+    else{
+        var commonoptions="";
+        for(val in commonvalues[value])
+        {
+            commonoptions+="<option>" + commonvalues[value][val] + "</option>"
+        }
+
+        document.getElementById('answers').innerHTML=commonoptions;
+    }
+
+}
+
+
+</script>
